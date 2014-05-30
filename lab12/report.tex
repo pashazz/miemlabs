@@ -1,0 +1,158 @@
+\documentclass[a4paper,12pt,fleqn,twoside]{scrartcl}
+%%% fleqn - все align'ы находятся слева
+
+%%% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % AMS
+\usepackage{mathtools} % Еще AMS
+\usepackage{mathtext} % Русские буквы в фомулах
+\usepackage{textcomp} % Чтобы в формулах можно было русские буквы
+%\usepackage{minted}
+\usepackage{listings}
+
+\lstdefinestyle{myc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  alsolanguage=[x86masm]Assembler,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  numbers=left,
+  numberstyle=\ttfamily
+}
+\usepackage{polyglossia}   %% загружает пакет многоязыковой вёрстки
+\setdefaultlanguage[spelling=modern]{russian}  %% устанавливает главный язык документа
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic}  %% свойства шрифтов по умолчанию
+
+\setmainfont{Times New Roman} %% задаёт основной шрифт документа
+\setmonofont{Ubuntu Mono}
+\setsansfont{Arial}
+
+
+\usepackage{geometry}
+\geometry{top=25mm}
+\geometry{bottom=35mm}
+\geometry{left=20mm}
+\geometry{right=20mm}
+\pagestyle{empty}
+
+%%% Таблицы
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+
+
+
+
+%% параметры абзаца
+\parindent = 0pt
+\begin{document}
+\begin{center}
+
+\large
+\bfseries
+Правительство Российской Федерации
+\bigskip
+
+
+Федеральное государственное автономное образовательное учреждение высшего профессионального образования\\
+<<Национальный исследовательский университет\\
+<<Высшая школа экономики>>\\
+\bigskip
+\mdseries
+
+Московский институт электроники и математики Национального исследовательского университета <<Высшая школа экономики>>
+\vspace{4ex}
+
+Факультет прикладной математики и кибернетики
+\vfill
+
+\bfseries
+\sffamily
+О\,Т\,Ч\,Е\,Т\,\\
+\bigskip
+
+По лабораторной работе № 12\\
+\bigskip
+По курсу <<Программирование>>
+\rmfamily \mdseries
+
+\vfill
+
+\small
+\extrarowheight=3pt
+\begin{tabular}{|l|l|l|l|}
+\hline
+ФИО студента & Номер группы & Дата & Баллы \\\hline
+\multirow{4}{*}{Борисов Павел Геннадьевич} & \multirow{4}{*}{ПИ-11} & \phantom{22.22.2222} & \phantom{10} \\\cline{3-4}
+&&&\\\cline{3-4}
+&&&\\\cline{3-4}
+&&&\\\hline
+
+\end{tabular}
+\vfill
+
+
+\bfseries \normalsize Москва - 2014 г.
+
+\end{center}
+
+\newpage
+\section*{Постановка задания}
+Задать многочлен от Х односвязным списком. Элемент списка содержит неотрицательный целочисленный показатель степени Х и ненулевой коэффициент при этой степени (в списке не должно быть элементов с одинаковыми степенями). Составить программу, включающую помимо указанных в задании функций, функции создания и вывода списка на экран. Список или списки должны отображаться на экране до обработки и после.
+
+\subsection*{Вариант 3}
+Написать функцию удаления коэффициента из представления многочлена (всех элементов, имеющих заданный коэффициент при разных степенях)
+
+\subsection*{Makefile}
+\lstinputlisting[style=myc,texcl=true]{Makefile}
+
+\subsection*{linkedlist.c}
+\lstinputlisting[style=myc,texcl=true]{linkedlist.c}
+
+\subsection*{linkedlist.h}
+\lstinputlisting[style=myc,texcl=true]{linkedlist.h}
+\subsection{main.c}
+\lstinputlisting[style=myc,texcl=true]{main.c}
+\section*{Тесты}
+\small
+\begin{verbatim}
+pasha@primum ~/projects/miem/1/4/12 (git)-[master] % ./lab12
+Enter the degree of polynomial (negative to stop): 3
+Enter the coefficient[3] (0 to stop):4
+Enter the degree of polynomial (negative to stop): 2
+Enter the coefficient[2] (0 to stop):4
+Enter the degree of polynomial (negative to stop): 1
+Enter the coefficient[1] (0 to stop):-5
+Enter the degree of polynomial (negative to stop): 0
+Enter the coefficient[0] (0 to stop):1
+Enter the degree of polynomial (negative to stop): -1
+Input: 4x^3 +4x^2 -5x + 1
+Enter the coefficient for removing: 4
+Result: -5x + 1
+
+
+
+ ./lab12
+Enter the degree of polynomial (negative to stop): 5
+Enter the coefficient[5] (0 to stop):1
+Enter the degree of polynomial (negative to stop): 3
+Enter the coefficient[3] (0 to stop):2
+Enter the degree of polynomial (negative to stop): 6
+Enter the coefficient[6] (0 to stop):-2
+Enter the degree of polynomial (negative to stop): -1
+Input: x^5 +2x^3 -2x^6
+Enter the coefficient for removing: 2
+Result: x^5 -2x^6
+
+\end{verbatim}
+
+% Code inclusion
+% C: \lstinputlisting[style=myc,texcl=true]{file}
+% asm: \lstinputlisting[style=myasm]{file}
+\end{document}
