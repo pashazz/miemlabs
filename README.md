@@ -9,6 +9,3 @@ miemlabs
 
 **discrete/** - reference card по комбинаторике
 
-[^1]
-
-[^1]: feel free to create issues if you want to
