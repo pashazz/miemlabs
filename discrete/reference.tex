@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper, fleqn]{scrartcl} % Класс печатного документа.
+% ljhgyfdjgv;jhh
+
+%%% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % AMS
+\usepackage{mathtools} % Еще AMS
+\usepackage{mathtext} % Русские буквы в фомулах
+\usepackage{marvosym}%%% Номера только там, где нужно
+% \usepackage{autonum}
+
+%%% Формула в рамке: \boxed{}
+
+%%% Русский язык в тексте
+\usepackage[russian]{babel} % Поддержка русского языка.
+\usepackage[X2,T2A]{fontenc} % Кодировки
+\usepackage[utf8]{inputenc} % Кодировка TeX-файла
+\usepackage{cmap} % Поддержка русского в PDF
+\usepackage{autonum}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}% Перенос знаков в формулах
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Шрифты
+%\usepackage{euler}
+
+\usepackage{concrete}
+
+\begin{document}
+\title{Combinatorics}
+\maketitle
+\section{Основы}
+\label{sec:basics}
+
+\begin{align}
+&  X = \{x_1, x_2, \dots, x_n\} & |X| = n\\
+&(x_{i_1}, x_{i_2}, \dots, x_{i_r})\text{ --- выборка длины } r\\
+&(n, r) \text{ --- выборка}
+\end{align}
+
+\section{Выборки}
+
+\begin{itemize}
+\item в которых порядок существенен: \textit{перестановки}: $P_n^r = (x_{i_1}, x_{i_2}, ..., x_{i_r})$
+  \\Свойства:
+\begin{enumerate}
+\item $C_n^r = \frac{P_n^r}{r!}$
+\end{enumerate}
+\item в которых порядок несущественен: \textit{сочетания}: $C_n^r = [x_{i_1}, x_{i_2}, ..., x_{i_r}]$
+\\Свойства:
+\begin{enumerate}
+\item $C_n^r=C_n^{n-r}$
+\item $C_{m+n}^n = C_{m+n}^m$
+\item $2^n = \sum_{k=0}^n C_n^k $
+\item $C_n^k = C_{n-1}^{k+1} + C_{n-1}^k$x
+\end{enumerate}
+\end{itemize}
+
+Над выборками с повторениями ставится $\overline{\text{крышка}}$
+
+\section{Формулы}
+{\scriptsize\slshape  \Info пор --- порядок важен; повт --- допускаются ли повторения; $n$ --- количество элементов в множестве; $r$ --- количество элементов в выборке}\\
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Название & пор & повт & практическая формула & теоретическая формула \\\hline
+  Перестановки & \Checkedbox &  \CrossedBox & $P_n^r = n(n-1) \cdot \ldots\cdot (n-r+1) $ &
+
+
+  $ P_n^r = \frac{n!}{(n-r)!}$\\\hline
+  Перестановки & \Checkedbox& \Checkedbox & $\overline{P_n^r} = n^r $& $\overline{P_n^r} = n^r $\\\hline
+  Сочетания & \CrossedBox & \CrossedBox & $C_n^r = \frac{n(n-1) \cdot \ldots \cdot (n-r+1)}{r!}$&
+  $C_n^r = \frac{n!}{(n-r)!r!}$\\\hline
+  Сочетания & \CrossedBox & \Checkedbox & $\overline{C_n^r} = C_{n+r-1}^r$& она же \\\hline
+\end{tabular}
+
+\section{Правила}
+\label{sec:rules}
+\subsection{Правило суммы}
+\begin{align}
+  |X| &= m\\
+  |Y| &= n\\
+  X \cap Y &= \emptyset \Rightarrow \\
+\Rightarrow &|X \cup Y| = m+n
+\end{align}
+
+\subsection{Правило произведения}
+\begin{align}
+& X \times Y = \{(x;y): \forall x \in X, \forall Y \in Y\} \\
+&  |X| = m & |Y| = n \\
+& |X \times Y| = mn
+\end{align}
+
+\end{document}
