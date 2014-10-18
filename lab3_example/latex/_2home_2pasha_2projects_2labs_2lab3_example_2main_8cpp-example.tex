@@ -1,0 +1,27 @@
+\hypertarget{_2home_2pasha_2projects_2labs_2lab3_example_2main_8cpp-example}{\section{/home/pasha/projects/labs/lab3\+\_\+example/main.\+cpp}
+}
+формирование вектора множеств dst из строки src по правилу dst\mbox{[}i\mbox{]} это множество слов из строки src, начинающихся на одну букву; множества отсортированы в обратном алфавитном пор¤дке букв, с которых начинаются их слова.
+
+Слова отсортированы в обратном алфавитном порядке букв.
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em src} & -\/ строка, которую нужно обработать \\
+\hline
+\mbox{\tt out}  & {\em dst} & -\/ результирующий вектор (предполагается пустой на входе)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{string} src src=”this is the malt that lay in the house that jack built”;
+vector<set<string>> dst;
+parseString(src,dst);
+\hyperlink{main_8cpp_aad76912aeb0d0bd90f174e4bb79246b1}{printVector}(dst); \textcolor{comment}{//   dst = \{\{“this”,”the”,”that”\}, \{“malt”\}, \{“lay”\}, \{“jack”\}, \{“is”,”in”\},
+       \{“house”\}, \{“built”\}\}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
