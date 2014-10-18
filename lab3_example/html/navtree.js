@@ -1,6 +1,14 @@
 var NAVTREE =
 [
   [ "Lab3 Example", "index.html", [
+    [ "Классы", null, [
+      [ "Классы", "annotated.html", "annotated" ],
+      [ "Алфавитный указатель классов", "classes.html", null ],
+      [ "Члены классов", "functions.html", [
+        [ "Указатель", "functions.html", null ],
+        [ "Функции", "functions_func.html", null ]
+      ] ]
+    ] ],
     [ "Файлы", null, [
       [ "Файлы", "files.html", "files" ],
       [ "Список членов всех файлов", "globals.html", [
@@ -13,7 +21,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"files.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

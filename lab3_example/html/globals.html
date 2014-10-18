@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
       <li class="current"><a href="files.html"><span>Файлы</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -96,7 +97,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Функции</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,23 +108,25 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 <div class="contents">
 <div class="textblock">Список всех документированных членов файлов со ссылками на документацию.</div><ul>
+<li>caseInsensitiveCharCompareReversed()
+: <a class="el" href="main_8h.html#ac4eafbc9c6c843563b989ebb68783cb4">main.h</a>
+</li>
 <li>compareVectorElements()
-: <a class="el" href="main_8h.html#a808d8635b5714b4d2d14acd5be3c0d02">main.h</a>
+: <a class="el" href="main_8h.html#a92f150e1d639bf083d970d4946db81c3">main.h</a>
 </li>
 <li>isNotAlnum()
 : <a class="el" href="main_8cpp.html#a841e251aebd6002bf7739323fc4425c9">main.cpp</a>
 </li>
 <li>parseString()
-: <a class="el" href="main_8cpp.html#a16b730e999f2147070707a0d33cd12b8">main.cpp</a>
-, <a class="el" href="main_8h.html#a16b730e999f2147070707a0d33cd12b8">main.h</a>
+: <a class="el" href="main_8cpp.html#af9ec44ed3b5c4a825c816e9428b5e0be">main.cpp</a>
+, <a class="el" href="main_8h.html#af9ec44ed3b5c4a825c816e9428b5e0be">main.h</a>
 </li>
 <li>printSet()
-: <a class="el" href="main_8cpp.html#a838826c208c39f83f855fab0803e8f19">main.cpp</a>
-, <a class="el" href="main_8h.html#a838826c208c39f83f855fab0803e8f19">main.h</a>
+: <a class="el" href="main_8h.html#a838826c208c39f83f855fab0803e8f19">main.h</a>
 </li>
 <li>printVector()
-: <a class="el" href="main_8cpp.html#aad76912aeb0d0bd90f174e4bb79246b1">main.cpp</a>
-, <a class="el" href="main_8h.html#aad76912aeb0d0bd90f174e4bb79246b1">main.h</a>
+: <a class="el" href="main_8cpp.html#ab1121b066210ae6f9c15bef30216a48b">main.cpp</a>
+, <a class="el" href="main_8h.html#ab1121b066210ae6f9c15bef30216a48b">main.h</a>
 </li>
 <li>stringToSet()
 : <a class="el" href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">main.cpp</a>
@@ -135,7 +138,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Документация по Lab3 Example. Последние изменения: Сб 18 Окт 2014 23:47:38. Создано системой
+    <li class="footer">Документация по Lab3 Example. Последние изменения: Вс 19 Окт 2014 03:39:29. Создано системой
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -23,11 +23,10 @@ bool isNotAlnum(const char &ch)
 
 
 
-
 int main()
 {
 	string src;
-	vector<set<string>> dst;
+	VectorOfStrings dst;
 
 	cout << "Input text: " << endl;
 	getline (cin,src);
@@ -41,10 +40,10 @@ int main()
 }
 
 
-void printSet(const set<string> &s)
+void printSet(const MyStringSet &s)
 {
 	cout << '{';
-	for(set<string>::iterator iter=s.begin(); iter!=s.end();)
+	for(auto iter=s.cbegin(); iter!=s.cend();)
 	{
 		cout << '"';
 		cout << *iter;
@@ -55,10 +54,10 @@ void printSet(const set<string> &s)
 	cout << '}';
 }
 
-void printVector(const vector<set<string>> &v)
+void printVector(const VectorOfStrings &v)
 {
 	cout << '{';
-	vector<set<string>>::const_iterator iter = v.begin();
+	VectorOfStrings::const_iterator iter = v.begin();
 	while(true)
 	{
 		printSet(*iter);
@@ -100,14 +99,13 @@ void stringToSet(const string &src, set<string> &setStr)
 *
 * <b>Пример</b>
 * @code{cpp}
-*     string src src=”this is the malt that lay in the house that jack built”;
-*     vector<set<string>> dst;
+*     string src=”this is the malt that lay in the house that jack built”;
+*     VectorOfStrings dst;
 *     parseString(src,dst);
 *     printVector(dst); //   dst = {{“this”,”the”,”that”}, {“malt”}, {“lay”}, {“jack”}, {“is”,”in”}, {“house”}, {“built”}}
 * @endcode
 */
-
-void parseString(const  string &src, vector<set<string>> &dst)
+void parseString(const  string &src, VectorOfStrings &dst)
 {
 	set<string> setOfAllWords;            //множество всех слов
 	stringToSet(src,setOfAllWords);
@@ -115,21 +113,21 @@ void parseString(const  string &src, vector<set<string>> &dst)
 	for (set<string>::iterator itAllWords= setOfAllWords.begin(); itAllWords != setOfAllWords.end(); itAllWords++)
 	{
 		bool inserted = false;
-		for (vector<set<string>>::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)
+		for (VectorOfStrings::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)
 		{
 			if(itAllWords->at(0) == iDst->begin()->at(0))            //если слово, начинающеес¤ с такой буквы уже есть
-			{
-					iDst->insert(*itAllWords);                   //добавляем в уже существующее множесто это слово
-					inserted = true;
-					break;
+            {
+                iDst->insert(*itAllWords);                   //добавляем в уже существующее множесто это слово
+                inserted = true;
+                break;
 			}
 		}
 		if (inserted)
 			continue;
 
-		set<string> newSet;
+		MyStringSet newSet;
 		newSet.insert(*itAllWords);
 		dst.push_back(newSet);
 	}
-	sort(dst.begin(), dst.end(), compareVectorElements);
+    sort(dst.begin(), dst.end(), compareVectorElements);
 }

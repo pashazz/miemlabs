@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
       <li class="current"><a href="files.html"><span>Файлы</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Функции</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,102 +116,101 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">int</span> main()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">string</span> src;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vector&lt;set&lt;string&gt;&gt; dst;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Input text: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    getline (cin,src);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="main_8cpp.html#a16b730e999f2147070707a0d33cd12b8">parseString</a>(src, dst);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="main_8cpp.html#aad76912aeb0d0bd90f174e4bb79246b1">printVector</a>(dst);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    system (<span class="stringliteral">&quot;pause&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> main()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">string</span> src;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    VectorOfStrings dst;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Input text: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    getline (cin,src);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="main_8cpp.html#af9ec44ed3b5c4a825c816e9428b5e0be">parseString</a>(src, dst);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="main_8cpp.html#ab1121b066210ae6f9c15bef30216a48b">printVector</a>(dst);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    system (<span class="stringliteral">&quot;pause&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="main_8h.html#a838826c208c39f83f855fab0803e8f19">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a838826c208c39f83f855fab0803e8f19">printSet</a>(<span class="keyword">const</span> set&lt;string&gt; &amp;s)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span>(set&lt;string&gt;::iterator iter=s.begin(); iter!=s.end();)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cout &lt;&lt; *iter;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(++iter!=s.end())</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="main_8h.html#aad76912aeb0d0bd90f174e4bb79246b1">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#aad76912aeb0d0bd90f174e4bb79246b1">printVector</a>(<span class="keyword">const</span> vector&lt;set&lt;string&gt;&gt; &amp;v)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    vector&lt;set&lt;string&gt;&gt;::const_iterator iter = v.begin();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="main_8cpp.html#a838826c208c39f83f855fab0803e8f19">printSet</a>(*iter);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span>(++iter!=v.end())</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;}&#39;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a838826c208c39f83f855fab0803e8f19">printSet</a>(<span class="keyword">const</span> MyStringSet &amp;s)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> iter=s.cbegin(); iter!=s.cend();)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; *iter;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span>(++iter!=s.end())</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="main_8h.html#ab1121b066210ae6f9c15bef30216a48b">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#ab1121b066210ae6f9c15bef30216a48b">printVector</a>(<span class="keyword">const</span> VectorOfStrings &amp;v)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;{&#39;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    VectorOfStrings::const_iterator iter = v.begin();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="main_8h.html#a838826c208c39f83f855fab0803e8f19">printSet</a>(*iter);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span>(++iter!=v.end())</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    cout &lt;&lt; <span class="charliteral">&#39;}&#39;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="main_8h.html#a3b0d0fa0df832574fb2990a424e36ecd">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;src, set&lt;string&gt; &amp;setStr)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    stringstream stream(src);                      <span class="comment">//&lt;поток из строки</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">string</span> s;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">while</span> (stream &gt;&gt; s)                                <span class="comment">//пока поток выводит в строку</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//cout &lt;&lt; s &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        s.erase(remove_if(s.begin(), s.end(), <a class="code" href="main_8cpp.html#a841e251aebd6002bf7739323fc4425c9">isNotAlnum</a>), s.end());      <span class="comment">//убирает не буквы</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        setStr.insert(s);                            <span class="comment">//заполн¤ем множество этими словами</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="main_8h.html#a16b730e999f2147070707a0d33cd12b8">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a16b730e999f2147070707a0d33cd12b8">parseString</a>(<span class="keyword">const</span>  <span class="keywordtype">string</span> &amp;src, vector&lt;set&lt;string&gt;&gt; &amp;dst)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    set&lt;string&gt; setOfAllWords;            <span class="comment">//множество всех слов</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a>(src,setOfAllWords);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">for</span> (set&lt;string&gt;::iterator itAllWords= setOfAllWords.begin(); itAllWords != setOfAllWords.end(); itAllWords++)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">bool</span> inserted = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">for</span> (vector&lt;set&lt;string&gt;&gt;::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">if</span>(itAllWords-&gt;at(0) == iDst-&gt;begin()-&gt;at(0))            <span class="comment">//если слово, начинающеес¤ с такой буквы уже есть</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    iDst-&gt;insert(*itAllWords);                   <span class="comment">//добавляем в уже существующее множесто это слово</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    inserted = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (inserted)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        set&lt;string&gt; newSet;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        newSet.insert(*itAllWords);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        dst.push_back(newSet);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    sort(dst.begin(), dst.end(), <a class="code" href="main_8h.html#a808d8635b5714b4d2d14acd5be3c0d02">compareVectorElements</a>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
-<div class="ttc" id="main_8h_html_a808d8635b5714b4d2d14acd5be3c0d02"><div class="ttname"><a href="main_8h.html#a808d8635b5714b4d2d14acd5be3c0d02">compareVectorElements</a></div><div class="ttdeci">bool compareVectorElements(const set&lt; string &gt; &amp;set1, const set&lt; string &gt; &amp;set2)</div><div class="ttdoc">сравнивает два вектора s по следующему правилу если вектор содержит множества, начинающиеся с буквы...</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00073">main.h:73</a></div></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="main_8h.html#a3b0d0fa0df832574fb2990a424e36ecd">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;src, set&lt;string&gt; &amp;setStr)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    stringstream stream(src);                      <span class="comment">//&lt;поток из строки</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">string</span> s;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">while</span> (stream &gt;&gt; s)                                <span class="comment">//пока поток выводит в строку</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">//cout &lt;&lt; s &lt;&lt; endl;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        s.erase(remove_if(s.begin(), s.end(), <a class="code" href="main_8cpp.html#a841e251aebd6002bf7739323fc4425c9">isNotAlnum</a>), s.end());      <span class="comment">//убирает не буквы</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        setStr.insert(s);                            <span class="comment">//заполн¤ем множество этими словами</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="main_8h.html#af9ec44ed3b5c4a825c816e9428b5e0be">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#af9ec44ed3b5c4a825c816e9428b5e0be">parseString</a>(<span class="keyword">const</span>  <span class="keywordtype">string</span> &amp;src, VectorOfStrings &amp;dst)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    set&lt;string&gt; setOfAllWords;            <span class="comment">//множество всех слов</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a>(src,setOfAllWords);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (set&lt;string&gt;::iterator itAllWords= setOfAllWords.begin(); itAllWords != setOfAllWords.end(); itAllWords++)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">bool</span> inserted = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">for</span> (VectorOfStrings::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span>(itAllWords-&gt;at(0) == iDst-&gt;begin()-&gt;at(0))            <span class="comment">//если слово, начинающеес¤ с такой буквы уже есть</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                iDst-&gt;insert(*itAllWords);                   <span class="comment">//добавляем в уже существующее множесто это слово</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                inserted = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (inserted)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        MyStringSet newSet;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        newSet.insert(*itAllWords);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        dst.push_back(newSet);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    sort(dst.begin(), dst.end(), <a class="code" href="main_8h.html#a92f150e1d639bf083d970d4946db81c3">compareVectorElements</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="main_8cpp_html_a838826c208c39f83f855fab0803e8f19"><div class="ttname"><a href="main_8cpp.html#a838826c208c39f83f855fab0803e8f19">printSet</a></div><div class="ttdeci">void printSet(const set&lt; string &gt; &amp;s)</div><div class="ttdoc">печать множества строк на экран </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00044">main.cpp:44</a></div></div>
-<div class="ttc" id="main_8cpp_html_a3b0d0fa0df832574fb2990a424e36ecd"><div class="ttname"><a href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a></div><div class="ttdeci">void stringToSet(const string &amp;src, set&lt; string &gt; &amp;setStr)</div><div class="ttdoc">формирование множества всех слов строки, исключая все символы, которые не являются буквами/цифрами ...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00076">main.cpp:76</a></div></div>
-<div class="ttc" id="main_8cpp_html_aad76912aeb0d0bd90f174e4bb79246b1"><div class="ttname"><a href="main_8cpp.html#aad76912aeb0d0bd90f174e4bb79246b1">printVector</a></div><div class="ttdeci">void printVector(const vector&lt; set&lt; string &gt;&gt; &amp;v)</div><div class="ttdoc">печать вектора множеств строк на экран </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00058">main.cpp:58</a></div></div>
+<div class="ttc" id="main_8cpp_html_a3b0d0fa0df832574fb2990a424e36ecd"><div class="ttname"><a href="main_8cpp.html#a3b0d0fa0df832574fb2990a424e36ecd">stringToSet</a></div><div class="ttdeci">void stringToSet(const string &amp;src, set&lt; string &gt; &amp;setStr)</div><div class="ttdoc">формирование множества всех слов строки, исключая все символы, которые не являются буквами/цифрами ...</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00075">main.cpp:75</a></div></div>
+<div class="ttc" id="main_8h_html_a838826c208c39f83f855fab0803e8f19"><div class="ttname"><a href="main_8h.html#a838826c208c39f83f855fab0803e8f19">printSet</a></div><div class="ttdeci">void printSet(const set&lt; string &gt; &amp;s)</div><div class="ttdoc">печать множества строк на экран </div></div>
+<div class="ttc" id="main_8cpp_html_ab1121b066210ae6f9c15bef30216a48b"><div class="ttname"><a href="main_8cpp.html#ab1121b066210ae6f9c15bef30216a48b">printVector</a></div><div class="ttdeci">void printVector(const VectorOfStrings &amp;v)</div><div class="ttdoc">печать вектора множеств строк на экран </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00057">main.cpp:57</a></div></div>
 <div class="ttc" id="main_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">essential functions for coding this lab </div></div>
-<div class="ttc" id="main_8cpp_html_a16b730e999f2147070707a0d33cd12b8"><div class="ttname"><a href="main_8cpp.html#a16b730e999f2147070707a0d33cd12b8">parseString</a></div><div class="ttdeci">void parseString(const string &amp;src, vector&lt; set&lt; string &gt;&gt; &amp;dst)</div><div class="ttdoc">формирование вектора множеств dst из строки src по правилу </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00110">main.cpp:110</a></div></div>
+<div class="ttc" id="main_8h_html_a92f150e1d639bf083d970d4946db81c3"><div class="ttname"><a href="main_8h.html#a92f150e1d639bf083d970d4946db81c3">compareVectorElements</a></div><div class="ttdeci">bool compareVectorElements(const MyStringSet &amp;set1, const MyStringSet &amp;set2)</div><div class="ttdoc">сравнивает два вектора s по следующему правилу если вектор содержит множества, начинающиеся с буквы...</div><div class="ttdef"><b>Definition:</b> <a href="main_8h_source.html#l00101">main.h:101</a></div></div>
+<div class="ttc" id="main_8cpp_html_af9ec44ed3b5c4a825c816e9428b5e0be"><div class="ttname"><a href="main_8cpp.html#af9ec44ed3b5c4a825c816e9428b5e0be">parseString</a></div><div class="ttdeci">void parseString(const string &amp;src, VectorOfStrings &amp;dst)</div><div class="ttdoc">формирование вектора множеств dst из строки src по правилу </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00108">main.cpp:108</a></div></div>
 <div class="ttc" id="main_8cpp_html_a841e251aebd6002bf7739323fc4425c9"><div class="ttname"><a href="main_8cpp.html#a841e251aebd6002bf7739323fc4425c9">isNotAlnum</a></div><div class="ttdeci">bool isNotAlnum(const char &amp;ch)</div><div class="ttdoc">проверка на то, является ли символ не буквой или цифрой </div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00019">main.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Документация по Lab3 Example. Последние изменения: Сб 18 Окт 2014 23:47:38. Создано системой
+    <li class="footer">Документация по Lab3 Example. Последние изменения: Вс 19 Окт 2014 03:39:29. Создано системой
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

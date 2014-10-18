@@ -13,21 +13,35 @@ essential functions for coding this lab
 {\ttfamily \#include $<$algorithm$>$}\\*
 {\ttfamily \#include $<$sstream$>$}\\*
 {\ttfamily \#include $<$cctype$>$}\\*
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{struct_set_comparison_predicate}{Set\+Comparison\+Predicate}
+\begin{DoxyCompactList}\small\item\em Устанавливает обратный порядок сортировки в алфавитном порядке для множества set$<$string$>$ (case-\/insensitive) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8h_a1e27e28b48da9c4e59ca2553551764c2}{typedef set$<$ string, \\*
+\hyperlink{struct_set_comparison_predicate}{Set\+Comparison\+Predicate} $>$ {\bfseries My\+String\+Set}}\label{main_8h_a1e27e28b48da9c4e59ca2553551764c2}
+
+\item 
+\hypertarget{main_8h_a4588d891ab6320bad8a1a33604ecd431}{typedef vector$<$ My\+String\+Set $>$ {\bfseries Vector\+Of\+Strings}}\label{main_8h_a4588d891ab6320bad8a1a33604ecd431}
+
+\end{DoxyCompactItemize}
 \subsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{main_8h_a16b730e999f2147070707a0d33cd12b8}{parse\+String} (const string \&src, vector$<$ set$<$ string $>$$>$ \&dst)
+void \hyperlink{main_8h_af9ec44ed3b5c4a825c816e9428b5e0be}{parse\+String} (const string \&src, Vector\+Of\+Strings \&dst)
 \begin{DoxyCompactList}\small\item\em формирование вектора множеств dst из строки src по правилу \end{DoxyCompactList}\item 
 void \hyperlink{main_8h_a3b0d0fa0df832574fb2990a424e36ecd}{string\+To\+Set} (const string \&src, set$<$ string $>$ \&set\+Str)
 \begin{DoxyCompactList}\small\item\em формирование множества всех слов строки, исключая все символы, которые не являются буквами/цифрами \end{DoxyCompactList}\item 
 void \hyperlink{main_8h_a838826c208c39f83f855fab0803e8f19}{print\+Set} (const set$<$ string $>$ \&s)
 \begin{DoxyCompactList}\small\item\em печать множества строк на экран \end{DoxyCompactList}\item 
-void \hyperlink{main_8h_aad76912aeb0d0bd90f174e4bb79246b1}{print\+Vector} (const vector$<$ set$<$ string $>$$>$ \&v)
+void \hyperlink{main_8h_ab1121b066210ae6f9c15bef30216a48b}{print\+Vector} (const Vector\+Of\+Strings \&v)
 \begin{DoxyCompactList}\small\item\em печать вектора множеств строк на экран \end{DoxyCompactList}\item 
-\hypertarget{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}{bool {\bfseries case\+Insensitive\+Char\+Compare\+Reversed} (const char \&ch1, const char \&ch2)}\label{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}
-
-\item 
-bool \hyperlink{main_8h_a808d8635b5714b4d2d14acd5be3c0d02}{compare\+Vector\+Elements} (const set$<$ string $>$ \&set1, const set$<$ string $>$ \&set2)
+bool \hyperlink{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}{case\+Insensitive\+Char\+Compare\+Reversed} (const char \&ch1, const char \&ch2)
+\begin{DoxyCompactList}\small\item\em сравнение двух символов в порядке, обратном алфавитному \end{DoxyCompactList}\item 
+bool \hyperlink{main_8h_a92f150e1d639bf083d970d4946db81c3}{compare\+Vector\+Elements} (const My\+String\+Set \&set1, const My\+String\+Set \&set2)
 \begin{DoxyCompactList}\small\item\em сравнивает два вектора s по следующему правилу если вектор содержит множества, начинающиеся с буквы, которая стоит ближе к концу алфавита, возвращает true иначе false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -44,14 +58,52 @@ Pavel Borisov Вспомогательные функции для выполн�
 
 
 \subsection{Функции}
-\hypertarget{main_8h_a808d8635b5714b4d2d14acd5be3c0d02}{\index{main.\+h@{main.\+h}!compare\+Vector\+Elements@{compare\+Vector\+Elements}}
+\hypertarget{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}{\index{main.\+h@{main.\+h}!case\+Insensitive\+Char\+Compare\+Reversed@{case\+Insensitive\+Char\+Compare\+Reversed}}
+\index{case\+Insensitive\+Char\+Compare\+Reversed@{case\+Insensitive\+Char\+Compare\+Reversed}!main.\+h@{main.\+h}}
+\subsubsection[{case\+Insensitive\+Char\+Compare\+Reversed}]{\setlength{\rightskip}{0pt plus 5cm}bool case\+Insensitive\+Char\+Compare\+Reversed (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{ch1, }
+\item[{const char \&}]{ch2}
+\end{DoxyParamCaption}
+)}}\label{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}
+
+
+сравнение двух символов в порядке, обратном алфавитному 
+
+Сравнение не зависит от регистра
+
+
+\begin{DoxyParams}{Аргументы}
+{\em ch1} & -\/ первый символ \\
+\hline
+{\em ch2} & -\/ второй символ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если ch1 ближе к концу алфавита, чем ch2 false в обратном случае 
+\end{DoxyReturn}
+
+
+См. определение в файле main.\+h строка 89
+
+
+
+Используется в compare\+Vector\+Elements().
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keywordflow}{return} tolower(ch1) > tolower(ch2);
+92 \}
+\end{DoxyCode}
+\hypertarget{main_8h_a92f150e1d639bf083d970d4946db81c3}{\index{main.\+h@{main.\+h}!compare\+Vector\+Elements@{compare\+Vector\+Elements}}
 \index{compare\+Vector\+Elements@{compare\+Vector\+Elements}!main.\+h@{main.\+h}}
 \subsubsection[{compare\+Vector\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}bool compare\+Vector\+Elements (
 \begin{DoxyParamCaption}
-\item[{const set$<$ string $>$ \&}]{set1, }
-\item[{const set$<$ string $>$ \&}]{set2}
+\item[{const My\+String\+Set \&}]{set1, }
+\item[{const My\+String\+Set \&}]{set2}
 \end{DoxyParamCaption}
-)}}\label{main_8h_a808d8635b5714b4d2d14acd5be3c0d02}
+)}}\label{main_8h_a92f150e1d639bf083d970d4946db81c3}
 
 
 сравнивает два вектора s по следующему правилу если вектор содержит множества, начинающиеся с буквы, которая стоит ближе к концу алфавита, возвращает true иначе false. 
@@ -65,7 +117,11 @@ Pavel Borisov Вспомогательные функции для выполн�
 \end{DoxyParams}
 
 
-См. определение в файле main.\+h строка 73
+См. определение в файле main.\+h строка 101
+
+
+
+Перекрестные ссылки case\+Insensitive\+Char\+Compare\+Reversed().
 
 
 
@@ -73,18 +129,19 @@ Pavel Borisov Вспомогательные функции для выполн�
 
 
 \begin{DoxyCode}
-74 \{
-75     \textcolor{keywordflow}{return} caseInsensitiveCharCompareReversed(set1.begin()->at(0), set2.begin()->at(0));
-76 \}
+102 \{
+103     \textcolor{keywordflow}{return} \hyperlink{main_8h_ac4eafbc9c6c843563b989ebb68783cb4}{caseInsensitiveCharCompareReversed}(set1.begin()->at(0), set2.
+      begin()->at(0));
+104 \}
 \end{DoxyCode}
-\hypertarget{main_8h_a16b730e999f2147070707a0d33cd12b8}{\index{main.\+h@{main.\+h}!parse\+String@{parse\+String}}
+\hypertarget{main_8h_af9ec44ed3b5c4a825c816e9428b5e0be}{\index{main.\+h@{main.\+h}!parse\+String@{parse\+String}}
 \index{parse\+String@{parse\+String}!main.\+h@{main.\+h}}
 \subsubsection[{parse\+String}]{\setlength{\rightskip}{0pt plus 5cm}void parse\+String (
 \begin{DoxyParamCaption}
 \item[{const string \&}]{src, }
-\item[{vector$<$ set$<$ string $>$$>$ \&}]{dst}
+\item[{Vector\+Of\+Strings \&}]{dst}
 \end{DoxyParamCaption}
-)}}\label{main_8h_a16b730e999f2147070707a0d33cd12b8}
+)}}\label{main_8h_af9ec44ed3b5c4a825c816e9428b5e0be}
 
 
 формирование вектора множеств dst из строки src по правилу 
@@ -102,15 +159,15 @@ dst\mbox{[}i\mbox{]} это множество слов из строки src, �
 \end{DoxyParams}
 {\bfseries Пример} 
 \begin{DoxyCode}
-\textcolor{keywordtype}{string} src src=”this is the malt that lay in the house that jack built”;
-vector<set<string>> dst;
-\hyperlink{main_8cpp_a16b730e999f2147070707a0d33cd12b8}{parseString}(src,dst);
-\hyperlink{main_8cpp_aad76912aeb0d0bd90f174e4bb79246b1}{printVector}(dst); \textcolor{comment}{//   dst = \{\{“this”,”the”,”that”\}, \{“malt”\}, \{“lay”\}, \{“jack”\}, \{“is”,”in”\},
+\textcolor{keywordtype}{string} src=”this is the malt that lay in the house that jack built”;
+VectorOfStrings dst;
+\hyperlink{main_8cpp_af9ec44ed3b5c4a825c816e9428b5e0be}{parseString}(src,dst);
+\hyperlink{main_8cpp_ab1121b066210ae6f9c15bef30216a48b}{printVector}(dst); \textcolor{comment}{//   dst = \{\{“this”,”the”,”that”\}, \{“malt”\}, \{“lay”\}, \{“jack”\}, \{“is”,”in”\},
        \{“house”\}, \{“built”\}\}}
 \end{DoxyCode}
  
 
-См. определение в файле main.\+cpp строка 110
+См. определение в файле main.\+cpp строка 108
 
 
 
@@ -118,34 +175,34 @@ vector<set<string>> dst;
 
 
 \begin{DoxyCode}
-111 \{
-112     set<string> setOfAllWords;            \textcolor{comment}{//множество всех слов}
-113     \hyperlink{main_8cpp_a3b0d0fa0df832574fb2990a424e36ecd}{stringToSet}(src,setOfAllWords);
-114 
-115     \textcolor{keywordflow}{for} (set<string>::iterator itAllWords= setOfAllWords.begin(); itAllWords != setOfAllWords.end(); 
+109 \{
+110     set<string> setOfAllWords;            \textcolor{comment}{//множество всех слов}
+111     \hyperlink{main_8cpp_a3b0d0fa0df832574fb2990a424e36ecd}{stringToSet}(src,setOfAllWords);
+112 
+113     \textcolor{keywordflow}{for} (set<string>::iterator itAllWords= setOfAllWords.begin(); itAllWords != setOfAllWords.end(); 
       itAllWords++)
-116     \{
-117         \textcolor{keywordtype}{bool} inserted = \textcolor{keyword}{false};
-118         \textcolor{keywordflow}{for} (vector<set<string>>::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)
-119         \{
-120             \textcolor{keywordflow}{if}(itAllWords->at(0) == iDst->begin()->at(0))            \textcolor{comment}{//если слово, начинающеес¤ с такой
+114     \{
+115         \textcolor{keywordtype}{bool} inserted = \textcolor{keyword}{false};
+116         \textcolor{keywordflow}{for} (VectorOfStrings::iterator iDst = dst.begin(); iDst != dst.end(); iDst++)
+117         \{
+118             \textcolor{keywordflow}{if}(itAllWords->at(0) == iDst->begin()->at(0))            \textcolor{comment}{//если слово, начинающеес¤ с такой
        буквы уже есть}
-121             \{
-122                     iDst->insert(*itAllWords);                   \textcolor{comment}{//добавляем в уже существующее множесто
-       это слово}
-123                     inserted = \textcolor{keyword}{true};
-124                     \textcolor{keywordflow}{break};
-125             \}
-126         \}
-127         \textcolor{keywordflow}{if} (inserted)
-128             \textcolor{keywordflow}{continue};
-129 
-130         set<string> newSet;
-131         newSet.insert(*itAllWords);
-132         dst.push\_back(newSet);
-133     \}
-134     sort(dst.begin(), dst.end(), \hyperlink{main_8h_a808d8635b5714b4d2d14acd5be3c0d02}{compareVectorElements});
-135 \}\end{DoxyCode}
+119             \{
+120                 iDst->insert(*itAllWords);                   \textcolor{comment}{//добавляем в уже существующее множесто это
+       слово}
+121                 inserted = \textcolor{keyword}{true};
+122                 \textcolor{keywordflow}{break};
+123             \}
+124         \}
+125         \textcolor{keywordflow}{if} (inserted)
+126             \textcolor{keywordflow}{continue};
+127 
+128         MyStringSet newSet;
+129         newSet.insert(*itAllWords);
+130         dst.push\_back(newSet);
+131     \}
+132     sort(dst.begin(), dst.end(), \hyperlink{main_8h_a92f150e1d639bf083d970d4946db81c3}{compareVectorElements});
+133 \}\end{DoxyCode}
 \hypertarget{main_8h_a838826c208c39f83f855fab0803e8f19}{\index{main.\+h@{main.\+h}!print\+Set@{print\+Set}}
 \index{print\+Set@{print\+Set}!main.\+h@{main.\+h}}
 \subsubsection[{print\+Set}]{\setlength{\rightskip}{0pt plus 5cm}void print\+Set (
@@ -164,41 +221,22 @@ vector<set<string>> dst;
 \end{DoxyParams}
 
 
-См. определение в файле main.\+cpp строка 44
-
-
-
 Используется в print\+Vector().
 
-
-\begin{DoxyCode}
-45 \{
-46     cout << \textcolor{charliteral}{'\{'};
-47     \textcolor{keywordflow}{for}(set<string>::iterator iter=s.begin(); iter!=s.end();)
-48     \{
-49         cout << \textcolor{charliteral}{'"'};
-50         cout << *iter;
-51         cout << \textcolor{charliteral}{'"'};
-52         \textcolor{keywordflow}{if}(++iter!=s.end())
-53         cout << \textcolor{stringliteral}{", "};
-54     \}
-55     cout << \textcolor{charliteral}{'\}'};
-56 \}
-\end{DoxyCode}
-\hypertarget{main_8h_aad76912aeb0d0bd90f174e4bb79246b1}{\index{main.\+h@{main.\+h}!print\+Vector@{print\+Vector}}
+\hypertarget{main_8h_ab1121b066210ae6f9c15bef30216a48b}{\index{main.\+h@{main.\+h}!print\+Vector@{print\+Vector}}
 \index{print\+Vector@{print\+Vector}!main.\+h@{main.\+h}}
 \subsubsection[{print\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}void print\+Vector (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ set$<$ string $>$$>$ \&}]{v}
+\item[{const Vector\+Of\+Strings \&}]{v}
 \end{DoxyParamCaption}
-)}}\label{main_8h_aad76912aeb0d0bd90f174e4bb79246b1}
+)}}\label{main_8h_ab1121b066210ae6f9c15bef30216a48b}
 
 
 печать вектора множеств строк на экран 
 
 Формат вывода \{\{Множество\}, \{Множество\}\} 
 
-См. определение в файле main.\+cpp строка 58
+См. определение в файле main.\+cpp строка 57
 
 
 
@@ -206,19 +244,19 @@ vector<set<string>> dst;
 
 
 \begin{DoxyCode}
-59 \{
-60     cout << \textcolor{charliteral}{'\{'};
-61     vector<set<string>>::const\_iterator iter = v.begin();
-62     \textcolor{keywordflow}{while}(\textcolor{keyword}{true})
-63     \{
-64         \hyperlink{main_8cpp_a838826c208c39f83f855fab0803e8f19}{printSet}(*iter);
-65         \textcolor{keywordflow}{if}(++iter!=v.end())
-66             cout << \textcolor{stringliteral}{", "};
-67         \textcolor{keywordflow}{else}
-68             \textcolor{keywordflow}{break};
-69     \}
-70     cout << \textcolor{charliteral}{'\}'} << endl;
-71 \}
+58 \{
+59     cout << \textcolor{charliteral}{'\{'};
+60     VectorOfStrings::const\_iterator iter = v.begin();
+61     \textcolor{keywordflow}{while}(\textcolor{keyword}{true})
+62     \{
+63         \hyperlink{main_8h_a838826c208c39f83f855fab0803e8f19}{printSet}(*iter);
+64         \textcolor{keywordflow}{if}(++iter!=v.end())
+65             cout << \textcolor{stringliteral}{", "};
+66         \textcolor{keywordflow}{else}
+67             \textcolor{keywordflow}{break};
+68     \}
+69     cout << \textcolor{charliteral}{'\}'} << endl;
+70 \}
 \end{DoxyCode}
 \hypertarget{main_8h_a3b0d0fa0df832574fb2990a424e36ecd}{\index{main.\+h@{main.\+h}!string\+To\+Set@{string\+To\+Set}}
 \index{string\+To\+Set@{string\+To\+Set}!main.\+h@{main.\+h}}
@@ -241,7 +279,7 @@ vector<set<string>> dst;
 \end{DoxyParams}
 
 
-См. определение в файле main.\+cpp строка 76
+См. определение в файле main.\+cpp строка 75
 
 
 
@@ -253,15 +291,15 @@ vector<set<string>> dst;
 
 
 \begin{DoxyCode}
-77 \{
-78     stringstream stream(src);                      \textcolor{comment}{//<поток из строки}
-79     \textcolor{keywordtype}{string} s;
-80     \textcolor{keywordflow}{while} (stream >> s)                                \textcolor{comment}{//пока поток выводит в строку}
-81     \{
-82         \textcolor{comment}{//cout << s << endl;}
-83         s.erase(remove\_if(s.begin(), s.end(), \hyperlink{main_8cpp_a841e251aebd6002bf7739323fc4425c9}{isNotAlnum}), s.end());      \textcolor{comment}{//убирает не буквы}
-84         setStr.insert(s);                            \textcolor{comment}{//заполн¤ем множество этими словами}
-85     \}
-86 
-87 \}
+76 \{
+77     stringstream stream(src);                      \textcolor{comment}{//<поток из строки}
+78     \textcolor{keywordtype}{string} s;
+79     \textcolor{keywordflow}{while} (stream >> s)                                \textcolor{comment}{//пока поток выводит в строку}
+80     \{
+81         \textcolor{comment}{//cout << s << endl;}
+82         s.erase(remove\_if(s.begin(), s.end(), \hyperlink{main_8cpp_a841e251aebd6002bf7739323fc4425c9}{isNotAlnum}), s.end());      \textcolor{comment}{//убирает не буквы}
+83         setStr.insert(s);                            \textcolor{comment}{//заполн¤ем множество этими словами}
+84     \}
+85 
+86 \}
 \end{DoxyCode}

@@ -1,0 +1,66 @@
+\hypertarget{struct_set_comparison_predicate}{\section{Класс Set\+Comparison\+Predicate}
+\label{struct_set_comparison_predicate}\index{Set\+Comparison\+Predicate@{Set\+Comparison\+Predicate}}
+}
+
+
+Устанавливает обратный порядок сортировки в алфавитном порядке для множества set$<$string$>$ (case-\/insensitive)  
+
+
+
+
+{\ttfamily \#include $<$main.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_set_comparison_predicate_a7426129aa1bd40d741b03138ea820edd}{operator()} (const string \&str1, const string \&str2)
+\begin{DoxyCompactList}\small\item\em Осуществяет сравнение двух строк по признаку\+: если первая лексикографически больше второй, то возврат true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Устанавливает обратный порядок сортировки в алфавитном порядке для множества set$<$string$>$ (case-\/insensitive) 
+
+
+
+См. определение в файле main.\+h строка 27
+
+
+
+\subsection{Методы}
+\hypertarget{struct_set_comparison_predicate_a7426129aa1bd40d741b03138ea820edd}{\index{Set\+Comparison\+Predicate@{Set\+Comparison\+Predicate}!operator()@{operator()}}
+\index{operator()@{operator()}!Set\+Comparison\+Predicate@{Set\+Comparison\+Predicate}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool Set\+Comparison\+Predicate\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str1, }
+\item[{const string \&}]{str2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_set_comparison_predicate_a7426129aa1bd40d741b03138ea820edd}
+
+
+Осуществяет сравнение двух строк по признаку\+: если первая лексикографически больше второй, то возврат true. 
+
+Иначе false. (обратный порядок сортировки) 
+
+См. определение в файле main.\+h строка 33
+
+
+\begin{DoxyCode}
+34     \{
+35         \textcolor{keywordtype}{string} str1\_lower, str2\_lower;
+36         \textcolor{comment}{/* Transform ТРЕБУЕТ, чтобы место для вывода}
+37 \textcolor{comment}{         результирующих элементов уже было выделено, поэтому выделяем его в конструкторе объектов: http://
+      www.cplusplus.com/reference/algorithm/transform/?kw=transform}
+38 \textcolor{comment}{         поэтому делаем вызов resize для соотв. строк}
+39 \textcolor{comment}{         */}
+40         str1\_lower.resize(str1.size());
+41         str2\_lower.resize(str2.size());
+42         transform(str1.begin(), str1.end(), str1\_lower.begin(), tolower); \textcolor{comment}{//конвертация в нижний регистр}
+43         transform(str2.begin(), str2.end(), str2\_lower.begin(), tolower);
+44         \textcolor{keywordflow}{return}  str1\_lower > str2\_lower;
+45     \}
+\end{DoxyCode}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8h}{main.\+h}\end{DoxyCompactItemize}
