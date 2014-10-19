@@ -43,13 +43,16 @@ int main()
 void printSet(const MyStringSet &s)
 {
 	cout << '{';
-	for(auto iter=s.cbegin(); iter!=s.cend();)
+    auto iter = s.cbegin();
+	while(true)
 	{
 		cout << '"';
 		cout << *iter;
 		cout << '"';
-		if(++iter!=s.end())
-		cout << ", ";
+		if(++iter!=s.cend())
+            cout << ", ";
+        else
+            break;
 	}
 	cout << '}';
 }
@@ -117,7 +120,7 @@ void parseString(const  string &src, VectorOfStrings &dst)
 		{
 			if(itAllWords->at(0) == iDst->begin()->at(0))            //если слово, начинающеес¤ с такой буквы уже есть
             {
-                iDst->insert(*itAllWords);                   //добавляем в уже существующее множесто это слово
+                iDst->insert(std::move(*itAllWords));                   //добавляем в уже существующее множесто это слово
                 inserted = true;
                 break;
 			}
@@ -126,8 +129,8 @@ void parseString(const  string &src, VectorOfStrings &dst)
 			continue;
 
 		MyStringSet newSet;
-		newSet.insert(*itAllWords);
-		dst.push_back(newSet);
+		newSet.insert(*itAllWords); // move value to newSet
+		dst.push_back(std::move(newSet)); //move, not copy value to the dst
 	}
     sort(dst.begin(), dst.end(), compareVectorElements);
 }
